@@ -1,3 +1,3 @@
-# Web-Animation-Template
+# Firework-Simulation
 
-My template repository for creating web animations
+Firework simulation in the browser using javascript and the HTML canvas
