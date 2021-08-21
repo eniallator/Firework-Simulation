@@ -16,7 +16,21 @@ window.onresize();
 
 const fireworks = [];
 const newFirework = (x, y) =>
-  new Firework(x, y, x, canvas.height / 4, 0.004, 20, 10, 17, 5, 600);
+  new Firework(
+    x,
+    y,
+    x,
+    canvas.height * paramConfig.getVal("explode-height") +
+      (2 * Math.random() - 1) *
+        (canvas.height / 3) *
+        paramConfig.getVal("explode-height-range"),
+    paramConfig.getVal("firework-speed"),
+    paramConfig.getVal("particle-count"),
+    paramConfig.getVal("particle-density"),
+    paramConfig.getVal("particle-speed"),
+    5,
+    paramConfig.getVal("particle-lifetime")
+  );
 
 const mouse = {
   down: false,
@@ -43,8 +57,6 @@ canvas.onmouseup = canvas.ontouchend = () => {
 
 ctx.fillStyle = "black";
 ctx.strokeStyle = "white";
-
-fireworks.push(newFirework(canvas.width / 2, canvas.height));
 
 function update(dt) {
   if (mouse.clicked) {
@@ -83,4 +95,7 @@ function run() {
   requestAnimationFrame(run);
 }
 
-paramConfig.onLoad(run);
+paramConfig.onLoad(() => {
+  fireworks.push(newFirework(canvas.width / 2, canvas.height));
+  run();
+});

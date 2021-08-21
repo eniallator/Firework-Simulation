@@ -25,6 +25,9 @@ class Firework {
     this.particleMinVel = particleMinVel;
     this.maxLifeTime = maxLifeTime;
 
+    this.direction =
+      (this.pos.copy().sub(this.explodeDestination).getAngle() - Math.PI / 2) %
+      (Math.PI * 2);
     this.status = "travelling";
     this.oldPos = this.pos.copy();
     this.vel = Vector.ZERO.copy();
@@ -76,13 +79,17 @@ class Firework {
     const imgWidth =
       (FIREWORK_ASSETS.unexploded.width / FIREWORK_ASSETS.unexploded.height) *
       imgHeight;
+    ctx.translate(this.pos.x, this.pos.y);
+    ctx.rotate(this.direction);
     ctx.drawImage(
       FIREWORK_ASSETS.unexploded,
-      this.pos.x - imgWidth / 2,
-      this.pos.y - imgHeight / 2,
+      -imgWidth / 2,
+      -imgHeight / 2,
       imgWidth,
       imgHeight
     );
+    ctx.rotate(-this.direction);
+    ctx.translate(-this.pos.x, -this.pos.y);
   }
 
   updateExploding(dt) {

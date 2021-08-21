@@ -1,40 +1,81 @@
 [
     {
-        "id": "example_checkbox",
-        "label": "Example Checkbox",
-        "type": "checkbox",
-        "default": true
-    },
-    {
-        "id": "example_range",
-        "label": "Example Range",
+        "id": "explode-height",
+        "label": "Explode Height",
         "type": "range",
-        "default": 5,
+        "default": 0.25,
         "attrs": {
-            "min": 1,
-            "max": 10,
-            "step": 0.5
+            "min": 0,
+            "max": 1,
+            "step": 0.05
         }
     },
     {
-        "id": "example_number",
-        "label": "Example Number",
-        "type": "number",
-        "default": 5,
+        "id": "explode-height-range",
+        "label": "Explode Height Range",
+        "type": "range",
+        "default": 0.5,
         "attrs": {
-            "min": 1,
-            "max": 10
+            "min": 0,
+            "max": 1,
+            "step": 0.05
         }
     },
     {
-        "id": "example_colour",
-        "label": "Example Colour",
-        "type": "color",
-        "default": "FF5A5F"
+        "id": "firework-speed",
+        "label": "Firework Speed",
+        "type": "range",
+        "default": 0.004,
+        "attrs": {
+            "min": 0.001,
+            "max": 0.04,
+            "step": 0.001
+        }
     },
     {
-        "id": "example_button",
-        "text": "Example Button",
-        "type": "button"
+        "id": "particle-speed",
+        "label": "Particle Speed",
+        "type": "range",
+        "default": 17,
+        "attrs": {
+            "min": 10,
+            "max": 25,
+            "step": 1
+        }
+    },
+    {
+        "id": "particle-lifetime",
+        "label": "Particle Lifetime",
+        "type": "range",
+        "default": 600,
+        "attrs": {
+            "min": 300,
+            "max": 3000,
+            "step": 50
+        }
+    },
+    {
+        "id": "particle-count",
+        "label": "Particle Count",
+        "type": "range",
+        "default": 20,
+        "attrs": {
+            "min": 5,
+            "max": 30,
+            "step": 1
+        },
+        "tooltip": "How many slices to fire particles in"
+    },
+    {
+        "id": "particle-density",
+        "label": "Particle Density",
+        "type": "range",
+        "default": 10,
+        "attrs": {
+            "min": 1,
+            "max": 20,
+            "step": 1
+        },
+        "tooltip": "How many particles per slice to fire particles in"
     }
 ]
