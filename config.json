@@ -1,7 +1,7 @@
 [
     {
-        "id": "explode-height",
-        "label": "Explode Height",
+        "id": "target-height",
+        "label": "Target Height",
         "type": "range",
         "default": 0.25,
         "attrs": {
@@ -11,8 +11,8 @@
         }
     },
     {
-        "id": "explode-height-range",
-        "label": "Explode Height Range",
+        "id": "target-height-range",
+        "label": "Target Height Range",
         "type": "range",
         "default": 0.5,
         "attrs": {
@@ -22,8 +22,8 @@
         }
     },
     {
-        "id": "firework-speed",
-        "label": "Firework Speed",
+        "id": "firework-acceleration",
+        "label": "Firework Acceleration",
         "type": "range",
         "default": 0.004,
         "attrs": {
@@ -76,6 +76,6 @@
             "max": 20,
             "step": 1
         },
-        "tooltip": "How many particles per slice to fire particles in"
+        "tooltip": "How many particles to fire per slice"
     }
 ]

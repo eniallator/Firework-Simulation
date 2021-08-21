@@ -20,11 +20,11 @@ const newFirework = (x, y) =>
     x,
     y,
     x,
-    canvas.height * paramConfig.getVal("explode-height") +
+    canvas.height * paramConfig.getVal("target-height") +
       (2 * Math.random() - 1) *
         (canvas.height / 3) *
-        paramConfig.getVal("explode-height-range"),
-    paramConfig.getVal("firework-speed"),
+        paramConfig.getVal("target-height-range"),
+    paramConfig.getVal("firework-acceleration"),
     paramConfig.getVal("particle-count"),
     paramConfig.getVal("particle-density"),
     paramConfig.getVal("particle-speed"),
