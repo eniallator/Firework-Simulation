@@ -13,7 +13,7 @@ class Firework {
     numParticles,
     numDensityIntervals,
     particleVel,
-    particleVelDecay,
+    particleMinVel,
     maxLifeTime
   ) {
     this.pos = new Vector(x, y);
@@ -22,7 +22,7 @@ class Firework {
     this.numParticles = numParticles;
     this.numDensityIntervals = numDensityIntervals;
     this.particleVel = particleVel;
-    this.particleVelDecay = particleVelDecay;
+    this.particleMinVel = particleMinVel;
     this.maxLifeTime = maxLifeTime;
 
     this.status = "travelling";
@@ -86,8 +86,10 @@ class Firework {
   }
 
   updateExploding(dt) {
-    const dist = dt * this.particleVel;
-    this.particleVel *= this.particleVelDecay * dt;
+    const velPercent = 1 - this.particleLifetime / this.maxLifeTime;
+    const dist =
+      velPercent * (this.particleVel - this.particleMinVel) +
+      this.particleMinVel;
     for (let particle of this.particles) {
       particle.addForwardScalar(dist);
     }

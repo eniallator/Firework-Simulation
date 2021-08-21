@@ -16,7 +16,7 @@ window.onresize();
 
 const fireworks = [];
 const newFirework = (x, y) =>
-  new Firework(x, y, x, canvas.height / 4, 0.004, 20, 10, 1, 0.06, 600);
+  new Firework(x, y, x, canvas.height / 4, 0.004, 20, 10, 17, 5, 600);
 
 const mouse = {
   down: false,
