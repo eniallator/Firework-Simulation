@@ -31,9 +31,6 @@ canvas.ontouchmove = (ev) => {
 };
 canvas.onmousedown = canvas.ontouchstart = (ev) => {
   mouse.clicked = mouse.down === false;
-  if (mouse.down === false) {
-    console.log("clicked");
-  }
   mouse.down = true;
   if (!isNaN(ev.clientX) && !isNaN(ev.clientY)) {
     [mouse.pos.x, mouse.pos.y] = [ev.clientX, ev.clientY];
